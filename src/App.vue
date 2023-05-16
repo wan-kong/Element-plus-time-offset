@@ -1,16 +1,17 @@
 
 <template>
-  <h5>请将浏览器屏幕尺寸调整为 1920 以下，MacOS default : 1512*982 </h5>
-  <h5>Please adjust brower screen width below 1920 px,Mac OS default is : 1512*982 </h5>
-  <h5>然后您可以查看时间选择器的</h5>
-  <el-date-picker v-model="dateTime" type="datetimerange">
-  </el-date-picker>
-  <br/>
-  <el-time-picker v-model="timer"></el-time-picker>
+  <Desc />
+  <el-form label-width="150px">
+    <el-form-item label="时间日期选择器："><el-date-picker v-model="dateTime" type="datetimerange">
+      </el-date-picker></el-form-item>
+    <br />
+    <el-form-item label="时间选择器："> <el-time-picker v-model="timer"></el-time-picker></el-form-item>
+  </el-form>
 </template>
 
 <script setup lang="ts" name="App">
 import { ref } from 'vue';
+import Desc from './components/Desc.vue'
 
 const dateTime = ref([])
 const timer = ref([])
